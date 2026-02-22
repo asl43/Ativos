@@ -6,163 +6,84 @@
 <title>Sistema Ativos</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-/* ═══════════════════════════════════════════════════
-   SISTEMA ATIVOS — Design: Luxury Dark / Editorial
-═══════════════════════════════════════════════════ */
-:root {
-  --bg:        #07080d;
-  --surface:   #0e0f18;
-  --card:      #12131f;
-  --card2:     #181929;
-  --border:    #1e2035;
-  --border2:   #252640;
-  --amber:     #f59e0b;
-  --amber-dim: #78501a;
-  --amber-glow:rgba(245,158,11,.12);
-  --green:     #22c55e;
-  --red:       #ef4444;
-  --blue:      #3b82f6;
-  --cyan:      #06b6d4;
-  --text:      #e2e4f0;
-  --muted:     #565870;
-  --muted2:    #3a3c55;
-  --r:         8px;
-  --r2:        14px;
+:root{
+  --bg:#07080d;--surface:#0e0f18;--card:#12131f;--card2:#181929;
+  --border:#1e2035;--border2:#252640;
+  --amber:#f59e0b;--amber-dim:#78501a;--amber-glow:rgba(245,158,11,.12);
+  --green:#22c55e;--red:#ef4444;--blue:#3b82f6;--cyan:#06b6d4;
+  --text:#e2e4f0;--muted:#565870;--muted2:#3a3c55;
+  --r:8px;--r2:14px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow:hidden}
 body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;font-size:14px}
-
-/* ── SCROLLBAR ─────────────────────────────── */
 ::-webkit-scrollbar{width:5px;height:5px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
-::-webkit-scrollbar-thumb:hover{background:var(--muted)}
 
-/* ══════════════════════════════════════════════
-   CONFIG BANNER
-══════════════════════════════════════════════ */
-#cfgBanner{
-  position:fixed;inset:0;z-index:1000;
-  background:var(--bg);
-  display:flex;align-items:center;justify-content:center;
-}
-.cfg-box{
-  width:480px;background:var(--card);border:1px solid var(--border2);
-  border-radius:var(--r2);padding:40px;
-}
-.cfg-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:36px;color:var(--amber);letter-spacing:2px;margin-bottom:4px}
-.cfg-desc{color:var(--muted);font-size:13px;margin-bottom:28px;line-height:1.5}
+/* ─── CONFIG ─────────────────────────────── */
+#cfgBanner{position:fixed;inset:0;z-index:1000;background:var(--bg);display:flex;align-items:center;justify-content:center}
+.cfg-box{width:500px;background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:40px}
+.cfg-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:32px;color:var(--amber);letter-spacing:2px;margin-bottom:4px}
+.cfg-desc{color:var(--muted);font-size:13px;margin-bottom:28px;line-height:1.6}
 .cfg-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);font-weight:600;margin-bottom:6px}
-.cfg-input{
-  width:100%;padding:11px 14px;background:var(--surface);border:1px solid var(--border2);
-  border-radius:var(--r);color:var(--text);font-size:13px;outline:none;
-  font-family:'DM Mono',monospace;transition:.2s;margin-bottom:16px;
-}
+.cfg-input{width:100%;padding:11px 14px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);color:var(--text);font-size:12px;outline:none;transition:.2s;margin-bottom:16px;font-family:'DM Mono',monospace}
 .cfg-input:focus{border-color:var(--amber);box-shadow:0 0 0 3px var(--amber-glow)}
-.cfg-note{font-size:12px;color:var(--muted);margin-bottom:24px;line-height:1.6}
-.cfg-note code{background:var(--surface);border:1px solid var(--border2);padding:1px 6px;border-radius:4px;font-family:'DM Mono',monospace;color:var(--amber);font-size:11px}
-.btn-cfg{
-  width:100%;padding:13px;background:var(--amber);color:#07080d;
-  border:none;border-radius:var(--r);font-weight:700;font-size:14px;
-  cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:.5px;transition:.15s;
-}
-.btn-cfg:hover{background:#fbbf24;transform:translateY(-1px)}
-.cfg-err{color:var(--red);font-size:12px;margin-top:10px;min-height:16px}
+.cfg-note{font-size:12px;color:var(--muted);margin-bottom:24px;line-height:1.7;background:var(--surface);padding:14px;border-radius:var(--r);border:1px solid var(--border)}
+.cfg-note code{background:rgba(245,158,11,.15);color:var(--amber);padding:1px 6px;border-radius:4px;font-family:'DM Mono',monospace;font-size:11px}
+.btn-cfg{width:100%;padding:13px;background:var(--amber);color:#07080d;border:none;border-radius:var(--r);font-weight:700;font-size:14px;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:.5px;transition:.15s}
+.btn-cfg:hover{background:#fbbf24}
+.cfg-err{color:var(--red);font-size:12px;margin-top:10px;min-height:18px;font-family:'DM Mono',monospace}
+.cfg-ok{color:var(--green);font-size:12px;margin-top:10px;min-height:18px}
 
-/* ══════════════════════════════════════════════
-   LOGIN
-══════════════════════════════════════════════ */
-#loginScreen{
-  position:fixed;inset:0;z-index:900;
-  background:var(--bg);
-  display:none;align-items:center;justify-content:center;
-}
+/* ─── LOGIN ──────────────────────────────── */
+#loginScreen{position:fixed;inset:0;z-index:900;background:var(--bg);display:none;align-items:center;justify-content:center}
 #loginScreen.show{display:flex}
-.login-wrap{
-  width:380px;background:var(--card);border:1px solid var(--border2);
-  border-radius:var(--r2);padding:44px 40px;text-align:center;
-  box-shadow:0 0 80px rgba(245,158,11,.06);
-}
+.login-wrap{width:380px;background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:44px 40px;text-align:center;box-shadow:0 0 80px rgba(245,158,11,.06)}
 .login-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:40px;color:var(--amber);letter-spacing:3px}
 .login-tagline{color:var(--muted);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:36px;margin-top:4px}
-.field{
-  width:100%;padding:12px 14px;background:var(--surface);
-  border:1px solid var(--border2);border-radius:var(--r);
-  color:var(--text);font-size:14px;outline:none;transition:.2s;
-  font-family:'Outfit',sans-serif;margin-bottom:12px;
-}
+.field{width:100%;padding:12px 14px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);color:var(--text);font-size:14px;outline:none;transition:.2s;font-family:'Outfit',sans-serif;margin-bottom:12px}
 .field:focus{border-color:var(--amber);box-shadow:0 0 0 3px var(--amber-glow)}
-.btn-login{
-  width:100%;padding:13px;background:var(--amber);color:#07080d;
-  border:none;border-radius:var(--r);font-weight:700;font-size:14px;
-  cursor:pointer;font-family:'Outfit',sans-serif;transition:.15s;letter-spacing:.5px;margin-top:4px;
-}
-.btn-login:hover{background:#fbbf24;transform:translateY(-1px)}
-.login-err{color:var(--red);font-size:12px;margin-top:12px;min-height:16px}
-.login-loading{display:none;color:var(--muted);font-size:13px;margin-top:12px}
+.btn-login{width:100%;padding:13px;background:var(--amber);color:#07080d;border:none;border-radius:var(--r);font-weight:700;font-size:15px;cursor:pointer;font-family:'Outfit',sans-serif;transition:.15s;letter-spacing:.5px;margin-top:4px}
+.btn-login:hover{background:#fbbf24}
+.login-err{color:var(--red);font-size:12px;margin-top:12px;min-height:18px;font-family:'DM Mono',monospace}
+.login-info{color:var(--muted);font-size:11px;margin-top:8px;font-family:'DM Mono',monospace}
+.spin-wrap{display:none;color:var(--muted);font-size:13px;margin-top:10px}
+.spin{display:inline-block;width:16px;height:16px;border:2px solid var(--border2);border-top-color:var(--amber);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-/* ══════════════════════════════════════════════
-   APP LAYOUT
-══════════════════════════════════════════════ */
+/* ─── APP ────────────────────────────────── */
 #app{display:none;height:100vh;flex-direction:row}
 #app.show{display:flex}
 
-/* ── SIDEBAR ──────────────────────────────── */
-#sidebar{
-  width:230px;min-width:230px;background:var(--card);
-  border-right:1px solid var(--border);
-  display:flex;flex-direction:column;height:100vh;overflow-y:auto;flex-shrink:0;
-  transition:.3s;
-}
+/* ─── SIDEBAR ────────────────────────────── */
+#sidebar{width:230px;min-width:230px;background:var(--card);border-right:1px solid var(--border);display:flex;flex-direction:column;height:100vh;overflow-y:auto;flex-shrink:0}
 .sb-top{padding:22px 20px 16px;border-bottom:1px solid var(--border)}
 .sb-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;color:var(--amber);letter-spacing:2px}
 .sb-user-name{font-size:13px;color:var(--text);margin-top:6px;font-weight:500}
 .sb-user-email{font-size:11px;color:var(--muted);margin-top:1px}
-
 .sb-nav{flex:1;padding:10px 0;overflow-y:auto}
-.sb-section{
-  font-size:10px;text-transform:uppercase;letter-spacing:2px;
-  color:var(--muted2);padding:14px 20px 5px;font-weight:600;
-}
-.sb-link{
-  display:flex;align-items:center;gap:10px;padding:9px 20px;
-  cursor:pointer;color:var(--muted);font-size:13px;font-weight:500;
-  transition:.15s;border-left:3px solid transparent;user-select:none;
-  position:relative;
-}
+.sb-section{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--muted2);padding:14px 20px 5px;font-weight:600}
+.sb-link{display:flex;align-items:center;gap:10px;padding:9px 20px;cursor:pointer;color:var(--muted);font-size:13px;font-weight:500;transition:.15s;border-left:3px solid transparent;user-select:none}
 .sb-link:hover{color:var(--text);background:rgba(255,255,255,.02)}
 .sb-link.active{color:var(--amber);background:var(--amber-glow);border-left-color:var(--amber)}
 .sb-link .ico{width:18px;text-align:center;font-size:14px;flex-shrink:0}
 .sb-bottom{padding:14px 16px;border-top:1px solid var(--border)}
-.btn-out{
-  width:100%;padding:9px;background:transparent;border:1px solid var(--border2);
-  color:var(--muted);border-radius:var(--r);cursor:pointer;font-size:12px;
-  font-family:'Outfit',sans-serif;transition:.15s;
-}
+.btn-out{width:100%;padding:9px;background:transparent;border:1px solid var(--border2);color:var(--muted);border-radius:var(--r);cursor:pointer;font-size:12px;font-family:'Outfit',sans-serif;transition:.15s}
 .btn-out:hover{border-color:var(--red);color:var(--red)}
 
-/* ── MAIN ─────────────────────────────────── */
+/* ─── MAIN ───────────────────────────────── */
 #main{flex:1;display:flex;flex-direction:column;overflow:hidden}
-#topbar{
-  padding:14px 28px;border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
-  background:var(--card);flex-shrink:0;
-}
+#topbar{padding:14px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--card);flex-shrink:0}
 .tb-title{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;color:var(--text)}
 .tb-sub{font-size:12px;color:var(--muted);margin-top:1px}
-.tb-actions{display:flex;gap:8px;align-items:center}
-
+.tb-acts{display:flex;gap:8px;align-items:center}
 #content{flex:1;overflow-y:auto;padding:24px 28px}
 .page{display:none}
 .page.active{display:block}
 
-/* ── BUTTONS ──────────────────────────────── */
-.btn{
-  padding:8px 16px;border-radius:var(--r);font-size:12px;font-weight:600;
-  cursor:pointer;border:none;transition:.15s;font-family:'Outfit',sans-serif;
-  display:inline-flex;align-items:center;gap:6px;white-space:nowrap;
-}
+/* ─── BOTÕES ─────────────────────────────── */
+.btn{padding:8px 16px;border-radius:var(--r);font-size:12px;font-weight:600;cursor:pointer;border:none;transition:.15s;font-family:'Outfit',sans-serif;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 .btn-primary{background:var(--amber);color:#07080d}
 .btn-primary:hover{background:#fbbf24}
 .btn-ghost{background:var(--surface);color:var(--text);border:1px solid var(--border2)}
@@ -173,126 +94,66 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;font
 .btn-blue:hover{background:rgba(59,130,246,.2)}
 .btn-sm{padding:5px 10px;font-size:11px}
 
-/* ── CARDS GRID ───────────────────────────── */
+/* ─── CARDS ──────────────────────────────── */
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin-bottom:22px}
-.kpi{
-  background:var(--card);border:1px solid var(--border);border-radius:var(--r2);
-  padding:20px;position:relative;overflow:hidden;cursor:default;
-}
-.kpi::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--amber),transparent);
-}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:20px;position:relative;overflow:hidden}
+.kpi::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent)}
 .kpi-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);font-weight:600;margin-bottom:10px}
 .kpi-value{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--text);line-height:1.1}
-.kpi-value.amber{color:var(--amber)}
-.kpi-value.green{color:var(--green)}
-.kpi-value.red{color:var(--red)}
-.kpi-value.blue{color:var(--blue)}
+.kpi-value.amber{color:var(--amber)}.kpi-value.green{color:var(--green)}.kpi-value.red{color:var(--red)}.kpi-value.blue{color:var(--blue)}
 .kpi-sub{font-size:11px;color:var(--muted);margin-top:5px}
 
-/* ── CHART ────────────────────────────────── */
+/* ─── CHART ──────────────────────────────── */
 .chart-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:20px;margin-bottom:22px}
 .chart-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.chart-title{font-weight:600;font-size:14px;color:var(--text)}
+.chart-title{font-weight:600;font-size:14px}
 .chart-body{display:flex;align-items:flex-end;gap:6px;height:110px}
-.bar{
-  flex:1;min-width:24px;border-radius:4px 4px 0 0;position:relative;
-  background:linear-gradient(180deg,var(--amber) 0%,var(--amber-dim) 100%);
-  transition:.4s;cursor:default;
-}
-.bar:hover::after{
-  content:attr(data-tip);position:absolute;bottom:calc(100% + 6px);left:50%;
-  transform:translateX(-50%);background:var(--card2);border:1px solid var(--border2);
-  padding:4px 8px;border-radius:6px;font-size:11px;color:var(--amber);
-  white-space:nowrap;pointer-events:none;font-family:'DM Mono',monospace;
-}
+.bar{flex:1;min-width:24px;border-radius:4px 4px 0 0;position:relative;background:linear-gradient(180deg,var(--amber) 0%,var(--amber-dim) 100%);transition:.4s;cursor:default}
+.bar:hover::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--card2);border:1px solid var(--border2);padding:4px 8px;border-radius:6px;font-size:11px;color:var(--amber);white-space:nowrap;pointer-events:none;font-family:'DM Mono',monospace}
 .chart-labels{display:flex;gap:6px;margin-top:6px}
 .chart-labels span{flex:1;text-align:center;font-size:9px;color:var(--muted);font-family:'DM Mono',monospace}
 
-/* ── TABLE CARD ───────────────────────────── */
+/* ─── TABELA ─────────────────────────────── */
 .tcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;margin-bottom:18px}
-.tcard-head{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:14px 20px;border-bottom:1px solid var(--border);
-}
-.tcard-title{font-weight:600;font-size:14px;color:var(--text)}
-.tcard-actions{display:flex;gap:8px}
-.tcard-body{overflow-x:auto}
+.tcard-head{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border)}
+.tcard-title{font-weight:600;font-size:14px}
 table{width:100%;border-collapse:collapse}
-thead th{
-  padding:10px 14px;text-align:left;
-  font-size:10px;text-transform:uppercase;letter-spacing:1.5px;
-  color:var(--muted);font-weight:600;background:var(--surface);white-space:nowrap;
-}
+thead th{padding:10px 14px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);font-weight:600;background:var(--surface);white-space:nowrap}
 tbody tr{border-top:1px solid var(--border);transition:.1s}
 tbody tr:hover{background:rgba(255,255,255,.015)}
 tbody td{padding:10px 14px;color:var(--text);white-space:nowrap;vertical-align:middle}
 .td-ticker{font-family:'DM Mono',monospace;font-weight:500;color:var(--amber);font-size:13px}
 .td-pos{color:var(--green);font-weight:600;font-family:'DM Mono',monospace}
 .td-neg{color:var(--red);font-weight:600;font-family:'DM Mono',monospace}
-.td-num{font-family:'DM Mono',monospace;color:var(--text)}
+.td-num{font-family:'DM Mono',monospace}
 .td-empty{text-align:center;color:var(--muted);padding:40px!important}
 .td-acts{display:flex;gap:5px}
-.badge{
-  display:inline-block;padding:2px 8px;border-radius:20px;
-  font-size:10px;font-weight:600;letter-spacing:.5px;
-}
-.badge-fii{background:rgba(59,130,246,.15);color:#60a5fa}
-.badge-ac{background:rgba(34,197,94,.15);color:#4ade80}
-.badge-cdb{background:rgba(245,158,11,.15);color:var(--amber)}
-
-/* ── EMPTY / LOADING ──────────────────────── */
 .loading-row{text-align:center;padding:44px;color:var(--muted)}
-.spin{
-  display:inline-block;width:20px;height:20px;
-  border:2px solid var(--border2);border-top-color:var(--amber);
-  border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:8px;
-}
-@keyframes spin{to{transform:rotate(360deg)}}
 
-/* ── MODAL ────────────────────────────────── */
-.overlay{
-  position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:800;
-  display:none;align-items:center;justify-content:center;
-}
+/* ─── MODAL ──────────────────────────────── */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:800;display:none;align-items:center;justify-content:center}
 .overlay.open{display:flex}
-.modal{
-  background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);
-  padding:32px;width:540px;max-width:95vw;max-height:90vh;overflow-y:auto;
-}
+.modal{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:32px;width:540px;max-width:95vw;max-height:90vh;overflow-y:auto}
 .modal-title{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;color:var(--amber);margin-bottom:24px;letter-spacing:1px}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .fg{display:flex;flex-direction:column;gap:5px}
 .fg.full{grid-column:span 2}
 .fg label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);font-weight:600}
-.fg input,.fg select,.fg textarea{
-  padding:10px 12px;background:var(--surface);border:1px solid var(--border2);
-  border-radius:var(--r);color:var(--text);font-size:13px;outline:none;
-  transition:.2s;font-family:'Outfit',sans-serif;
-}
-.fg input:focus,.fg select:focus{border-color:var(--amber);box-shadow:0 0 0 3px var(--amber-glow)}
-.fg select option{background:var(--surface)}
+.fg input,.fg select,.fg textarea{padding:10px 12px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);color:var(--text);font-size:13px;outline:none;transition:.2s;font-family:'Outfit',sans-serif}
+.fg input:focus{border-color:var(--amber);box-shadow:0 0 0 3px var(--amber-glow)}
 .modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:24px}
 .btn-cancel{padding:9px 20px;background:transparent;border:1px solid var(--border2);color:var(--muted);border-radius:var(--r);cursor:pointer;font-size:13px;font-family:'Outfit',sans-serif;transition:.15s}
 .btn-cancel:hover{color:var(--text);border-color:var(--muted)}
-.btn-save{padding:9px 24px;background:var(--amber);color:#07080d;border:none;border-radius:var(--r);font-weight:700;font-size:13px;cursor:pointer;font-family:'Outfit',sans-serif;transition:.15s}
+.btn-save{padding:9px 24px;background:var(--amber);color:#07080d;border:none;border-radius:var(--r);font-weight:700;font-size:13px;cursor:pointer;font-family:'Outfit',sans-serif}
 .btn-save:hover{background:#fbbf24}
 
-/* ── TOAST ────────────────────────────────── */
-#toast{
-  position:fixed;bottom:24px;right:24px;z-index:9999;
-  background:var(--card2);border:1px solid var(--border2);border-radius:var(--r2);
-  padding:12px 20px;font-size:13px;pointer-events:none;
-  transform:translateY(16px);opacity:0;transition:.25s;display:flex;align-items:center;gap:8px;
-  max-width:320px;
-}
+/* ─── TOAST ──────────────────────────────── */
+#toast{position:fixed;bottom:24px;right:24px;z-index:9999;background:var(--card2);border:1px solid var(--border2);border-radius:var(--r2);padding:12px 20px;font-size:13px;pointer-events:none;transform:translateY(16px);opacity:0;transition:.25s;max-width:320px}
 #toast.show{transform:translateY(0);opacity:1}
 #toast.ok{border-color:var(--green);color:var(--green)}
 #toast.err{border-color:var(--red);color:var(--red)}
 #toast.info{border-color:var(--amber);color:var(--amber)}
 
-/* ── RESPONSIVE ───────────────────────────── */
 @media(max-width:800px){
   #sidebar{width:58px;min-width:58px}
   .sb-logo,.sb-user-name,.sb-user-email,.sb-section,.sb-link span:not(.ico),.sb-bottom .btn-out span{display:none}
@@ -300,52 +161,54 @@ tbody td{padding:10px 14px;color:var(--text);white-space:nowrap;vertical-align:m
   #content{padding:16px}
   .fgrid{grid-template-columns:1fr}
   .fg.full{grid-column:span 1}
-  .cards{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- ══ BANNER DE CONFIGURAÇÃO ══════════════════════════════ -->
+<!-- ─── CONFIG ─────────────────────────────────────────── -->
 <div id="cfgBanner">
   <div class="cfg-box">
-    <div class="cfg-logo">⚙ CONFIGURAÇÃO</div>
+    <div class="cfg-logo">⚙ CONFIGURAR API</div>
     <div class="cfg-desc" style="margin-top:6px">
-      Cole abaixo a URL do seu <strong style="color:var(--text)">Apps Script Web App</strong>.<br>
-      Você só precisará fazer isso uma vez — a URL ficará salva no navegador.
+      Cole abaixo a URL do <strong style="color:var(--text)">Apps Script Web App</strong> implantado na sua planilha SISTEMA ATIVOS.
     </div>
-    <div class="cfg-label">URL do Apps Script Web App</div>
-    <input class="cfg-input" id="cfgUrl" type="url"
-      placeholder="https://script.google.com/macros/s/XXXXXX/exec"/>
+    <div class="cfg-label">URL do Web App</div>
+    <input class="cfg-input" id="cfgUrl" type="url" placeholder="https://script.google.com/macros/s/XXXXXX/exec"/>
     <div class="cfg-note">
-      Como obter: Planilha → <code>Extensões</code> → <code>Apps Script</code> → <code>Implantar</code> →
-      <code>Nova implantação</code> → Tipo: <code>Aplicativo da Web</code> → copie a URL gerada.
+      <strong style="color:var(--text)">Como obter a URL:</strong><br>
+      1. Planilha → <code>Extensões</code> → <code>Apps Script</code><br>
+      2. Cole o <code>Code.gs</code> fornecido<br>
+      3. Execute <code>inicializarPlanilha()</code> e <code>criarTriggers()</code><br>
+      4. <code>Implantar</code> → <code>Nova implantação</code> → Tipo: <code>Aplicativo da Web</code><br>
+      5. Executar como: <code>Eu</code> | Acesso: <code>Qualquer pessoa</code><br>
+      6. Copie e cole a URL aqui
     </div>
-    <button class="btn-cfg" onclick="salvarConfig()">CONECTAR E CONTINUAR</button>
+    <button class="btn-cfg" onclick="salvarConfig()">TESTAR E CONECTAR</button>
     <div class="cfg-err" id="cfgErr"></div>
+    <div class="cfg-ok"  id="cfgOk"></div>
   </div>
 </div>
 
-<!-- ══ LOGIN ════════════════════════════════════════════════ -->
+<!-- ─── LOGIN ──────────────────────────────────────────── -->
 <div id="loginScreen">
   <div class="login-wrap">
     <div class="login-logo">ATIVOS</div>
     <div class="login-tagline">Gestão de Investimentos</div>
-    <input class="field" id="lEmail" type="email" placeholder="Email"/>
+    <input class="field" id="lEmail" type="email" placeholder="Email (cadastrado na aba Usuários)"/>
     <input class="field" id="lSenha" type="password" placeholder="Senha"/>
     <button class="btn-login" onclick="fazerLogin()">ENTRAR</button>
-    <div class="login-loading" id="lLoading"><span class="spin"></span>Verificando...</div>
+    <div class="spin-wrap" id="lSpin"><span class="spin"></span>Verificando...</div>
     <div class="login-err" id="lErr"></div>
-    <div style="margin-top:16px;font-size:11px;color:var(--muted)">
-      <a href="#" onclick="resetConfig()" style="color:var(--muted2);text-decoration:none">Trocar URL da API</a>
+    <div class="login-info" id="lInfo"></div>
+    <div style="margin-top:18px;font-size:11px">
+      <a href="#" onclick="resetConfig()" style="color:var(--muted2);text-decoration:none">↩ Trocar URL da API</a>
     </div>
   </div>
 </div>
 
-<!-- ══ APP ══════════════════════════════════════════════════ -->
+<!-- ─── APP ────────────────────────────────────────────── -->
 <div id="app">
-
-  <!-- SIDEBAR -->
   <div id="sidebar">
     <div class="sb-top">
       <div class="sb-logo">ATIVOS</div>
@@ -354,132 +217,118 @@ tbody td{padding:10px 14px;color:var(--text);white-space:nowrap;vertical-align:m
     </div>
     <nav class="sb-nav">
       <div class="sb-section">Principal</div>
-      <div class="sb-link active" data-page="dashboard" onclick="nav(this,'dashboard')">
-        <span class="ico">◉</span><span>Dashboard</span>
-      </div>
+      <div class="sb-link active" onclick="nav(this,'dashboard')"><span class="ico">◉</span><span>Dashboard</span></div>
       <div class="sb-section">Renda Fixa</div>
-      <div class="sb-link" data-page="cdb" onclick="nav(this,'cdb')">
-        <span class="ico">🏦</span><span>CDB</span>
-      </div>
-      <div class="sb-section">Fundos Imobiliários</div>
-      <div class="sb-link" data-page="fiisC" onclick="nav(this,'fiisC')">
-        <span class="ico">🏢</span><span>FIIs Comprados</span>
-      </div>
-      <div class="sb-link" data-page="fiisN" onclick="nav(this,'fiisN')">
-        <span class="ico">👁</span><span>FIIs Watchlist</span>
-      </div>
+      <div class="sb-link" onclick="nav(this,'cdb')"><span class="ico">🏦</span><span>CDB</span></div>
+      <div class="sb-section">FIIs</div>
+      <div class="sb-link" onclick="nav(this,'fiisC')"><span class="ico">🏢</span><span>FIIs Comprados</span></div>
+      <div class="sb-link" onclick="nav(this,'fiisN')"><span class="ico">👁</span><span>FIIs Watchlist</span></div>
       <div class="sb-section">Ações</div>
-      <div class="sb-link" data-page="acC" onclick="nav(this,'acC')">
-        <span class="ico">📈</span><span>Ações Compradas</span>
-      </div>
-      <div class="sb-link" data-page="acN" onclick="nav(this,'acN')">
-        <span class="ico">🔍</span><span>Ações Watchlist</span>
-      </div>
+      <div class="sb-link" onclick="nav(this,'acC')"><span class="ico">📈</span><span>Ações Compradas</span></div>
+      <div class="sb-link" onclick="nav(this,'acN')"><span class="ico">🔍</span><span>Ações Watchlist</span></div>
       <div class="sb-section">Gestão</div>
-      <div class="sb-link" data-page="aportes" onclick="nav(this,'aportes')">
-        <span class="ico">💰</span><span>Aportes</span>
-      </div>
-      <div class="sb-link" data-page="historico" onclick="nav(this,'historico')">
-        <span class="ico">📅</span><span>Histórico</span>
-      </div>
-      <div class="sb-link" data-page="usuarios" onclick="nav(this,'usuarios')">
-        <span class="ico">👤</span><span>Usuários</span>
-      </div>
+      <div class="sb-link" onclick="nav(this,'aportes')"><span class="ico">💰</span><span>Aportes</span></div>
+      <div class="sb-link" onclick="nav(this,'historico')"><span class="ico">📅</span><span>Histórico</span></div>
+      <div class="sb-link" onclick="nav(this,'usuarios')"><span class="ico">👤</span><span>Usuários</span></div>
     </nav>
     <div class="sb-bottom">
-      <button class="btn-out" onclick="logout()"><span>⏻ Sair</span></button>
+      <button class="btn-out" onclick="logout()">⏻ Sair</button>
     </div>
   </div>
 
-  <!-- MAIN -->
   <div id="main">
     <div id="topbar">
       <div>
         <div class="tb-title" id="tbTitle">Dashboard</div>
-        <div class="tb-sub" id="tbSub">Visão geral em tempo real</div>
+        <div class="tb-sub"  id="tbSub">Visão geral em tempo real</div>
       </div>
-      <div class="tb-actions" id="tbActions"></div>
+      <div class="tb-acts" id="tbActs"></div>
     </div>
     <div id="content">
-
-      <!-- ── DASHBOARD ── -->
       <div class="page active" id="pg-dashboard"></div>
-
-      <!-- ── CDB ── -->
       <div class="page" id="pg-cdb"></div>
-
-      <!-- ── FIIS COMPRADOS ── -->
       <div class="page" id="pg-fiisC"></div>
-
-      <!-- ── FIIS NÃO COMPRADOS ── -->
       <div class="page" id="pg-fiisN"></div>
-
-      <!-- ── AÇÕES COMPRADAS ── -->
       <div class="page" id="pg-acC"></div>
-
-      <!-- ── AÇÕES NÃO COMPRADAS ── -->
       <div class="page" id="pg-acN"></div>
-
-      <!-- ── APORTES ── -->
       <div class="page" id="pg-aportes"></div>
-
-      <!-- ── HISTÓRICO ── -->
       <div class="page" id="pg-historico"></div>
-
-      <!-- ── USUÁRIOS ── -->
       <div class="page" id="pg-usuarios"></div>
-
     </div>
   </div>
 </div>
 
-<!-- ── MODAL ── -->
+<!-- ─── MODAL ──────────────────────────────────────────── -->
 <div class="overlay" id="overlay" onclick="closeModalOutside(event)">
   <div class="modal" id="modalBox">
     <div class="modal-title" id="modalTitle">Novo Registro</div>
     <div id="modalForm"></div>
     <div class="modal-actions">
       <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
-      <button class="btn-save" onclick="saveModal()">Salvar</button>
+      <button class="btn-save"   onclick="saveModal()">Salvar</button>
     </div>
   </div>
 </div>
 
-<!-- ── TOAST ── -->
+<!-- ─── TOAST ───────────────────────────────────────────── -->
 <div id="toast"></div>
 
 <script>
 'use strict';
-
-// ═══════════════════════════════════════════════
-// CONFIG & API
-// ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
+   CONFIG
+═══════════════════════════════════════════ */
 let API = '';
-const LS_URL = 'siativos_api_url';
-const LS_USR = 'siativos_user';
+const LS_URL = 'siativos_url';
+const LS_USR = 'siativos_usr';
 
-function salvarConfig() {
+// Chamada GET pura — sem CORS issues
+async function apiGet(action, params = {}) {
+  const qs = new URLSearchParams({ action, ...params }).toString();
+  const url = `${API}?${qs}`;
+  const r = await fetch(url, { method: 'GET', redirect: 'follow' });
+  const txt = await r.text();
+  let d;
+  try { d = JSON.parse(txt); } catch(_) { throw new Error('Resposta inválida: ' + txt.slice(0,200)); }
+  if (d.error) throw new Error(d.error);
+  return d;
+}
+
+// Para escrita: envia linha como JSON string no parâmetro GET
+async function apiWrite(action, params = {}) {
+  const p = { ...params };
+  if (p.linha && Array.isArray(p.linha)) p.linha = JSON.stringify(p.linha);
+  return apiGet(action, p);
+}
+
+/* ═══════════════════════════════════════════
+   CONFIG BANNER
+═══════════════════════════════════════════ */
+async function salvarConfig() {
   const url = document.getElementById('cfgUrl').value.trim();
   if (!url.startsWith('https://script.google.com')) {
-    document.getElementById('cfgErr').textContent = 'URL inválida. Deve começar com https://script.google.com';
+    setErr('cfgErr','URL inválida. Deve começar com https://script.google.com');
     return;
   }
-  document.getElementById('cfgErr').textContent = 'Testando conexão...';
-  fetch(`${url}?action=ping`)
-    .then(r => r.json())
-    .then(d => {
-      if (d.ok) {
-        localStorage.setItem(LS_URL, url);
-        API = url;
-        document.getElementById('cfgBanner').style.display = 'none';
-        document.getElementById('loginScreen').classList.add('show');
-      } else {
-        document.getElementById('cfgErr').textContent = 'API respondeu, mas retornou erro. Verifique o deploy.';
-      }
-    })
-    .catch(() => {
-      document.getElementById('cfgErr').textContent = 'Não foi possível conectar. Verifique a URL e o deploy.';
-    });
+  setErr('cfgErr','⏳ Testando conexão...');
+  document.getElementById('cfgOk').textContent = '';
+  try {
+    const r = await fetch(`${url}?action=ping`, { method:'GET', redirect:'follow' });
+    const t = await r.text();
+    const d = JSON.parse(t);
+    if (d.ok) {
+      localStorage.setItem(LS_URL, url);
+      API = url;
+      setErr('cfgErr','');
+      document.getElementById('cfgBanner').style.display = 'none';
+      document.getElementById('loginScreen').classList.add('show');
+      toast('API conectada com sucesso!','ok');
+    } else {
+      setErr('cfgErr','Resposta inesperada: ' + JSON.stringify(d));
+    }
+  } catch(e) {
+    setErr('cfgErr','Erro: ' + e.message + '\n\nVerifique: 1) URL correta 2) Implantação com acesso "Qualquer pessoa"');
+  }
 }
 
 function resetConfig() {
@@ -488,58 +337,38 @@ function resetConfig() {
   location.reload();
 }
 
-// ── API CALL ───────────────────────────────────
-async function api(action, payload = {}) {
-  const isRead = ['ping','lerAba','getDashboard'].includes(action);
-  try {
-    let r;
-    if (isRead && Object.keys(payload).length === 0) {
-      r = await fetch(`${API}?action=${action}`);
-    } else if (isRead) {
-      const qs = new URLSearchParams({ action, ...payload }).toString();
-      r = await fetch(`${API}?${qs}`);
-    } else {
-      r = await fetch(API, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action, ...payload })
-      });
-    }
-    const d = await r.json();
-    if (d.error) throw new Error(d.error);
-    return d;
-  } catch(e) {
-    toast(e.message || 'Erro de comunicação com a API', 'err');
-    throw e;
-  }
-}
-
-// ═══════════════════════════════════════════════
-// AUTENTICAÇÃO
-// ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
+   LOGIN
+═══════════════════════════════════════════ */
 let currentUser = null;
 
 async function fazerLogin() {
   const email = document.getElementById('lEmail').value.trim();
   const senha = document.getElementById('lSenha').value.trim();
-  if (!email || !senha) { document.getElementById('lErr').textContent = 'Preencha email e senha.'; return; }
-  document.getElementById('lErr').textContent = '';
-  document.getElementById('lLoading').style.display = 'block';
+  if (!email || !senha) { setErr('lErr','Preencha email e senha.'); return; }
+  setErr('lErr','');
+  document.getElementById('lInfo').textContent = '';
+  document.getElementById('lSpin').style.display = 'block';
+  document.getElementById('lInfo').textContent = `Verificando: ${email}`;
   try {
-    const res = await api('autenticar', { email, senha });
+    const res = await apiGet('autenticar', { email, senha });
+    document.getElementById('lSpin').style.display = 'none';
     if (res.ok) {
       currentUser = res;
       localStorage.setItem(LS_USR, JSON.stringify(res));
       document.getElementById('loginScreen').classList.remove('show');
       document.getElementById('app').classList.add('show');
-      document.getElementById('sbNome').textContent = res.nome;
+      document.getElementById('sbNome').textContent  = res.nome;
       document.getElementById('sbEmail').textContent = res.email;
       carregarPagina('dashboard');
     } else {
-      document.getElementById('lErr').textContent = res.msg || 'Acesso negado.';
+      setErr('lErr', res.msg || 'Acesso negado.');
+      document.getElementById('lInfo').textContent = 'Verifique email/senha na aba "Usuários" da planilha.';
     }
-  } catch(_) {}
-  document.getElementById('lLoading').style.display = 'none';
+  } catch(e) {
+    document.getElementById('lSpin').style.display = 'none';
+    setErr('lErr', 'Erro de comunicação: ' + e.message);
+  }
 }
 
 function logout() {
@@ -549,23 +378,24 @@ function logout() {
   document.getElementById('loginScreen').classList.add('show');
   document.getElementById('lEmail').value = '';
   document.getElementById('lSenha').value = '';
+  setErr('lErr','');
+  document.getElementById('lInfo').textContent = '';
 }
 
-// ═══════════════════════════════════════════════
-// NAVEGAÇÃO
-// ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
+   NAVEGAÇÃO
+═══════════════════════════════════════════ */
 const PAGES = {
-  dashboard:{ title:'Dashboard',  sub:'Visão geral em tempo real',          load: loadDashboard,   actions: dashActions },
-  cdb:      { title:'CDB',        sub:'Renda fixa e títulos',               load: ()=>loadTabela('CDB','cdb'),         actions: ()=>tblActions('CDB','cdb','FII') },
-  fiisC:    { title:'FIIs Comprados', sub:'Fundos Imobiliários em carteira',load: ()=>loadTabela('FIIS_COMPRADOS','fiisC'),     actions: ()=>tblActions('FIIS_COMPRADOS','fiisC','FII') },
-  fiisN:    { title:'FIIs Watchlist', sub:'Fundos em análise',              load: ()=>loadTabela('FIIS_NAO_COMPRADOS','fiisN'), actions: ()=>tblActions('FIIS_NAO_COMPRADOS','fiisN','FII') },
-  acC:      { title:'Ações Compradas',sub:'Renda variável em carteira',     load: ()=>loadTabela('ACOES_COMPRADOS','acC'),      actions: ()=>tblActions('ACOES_COMPRADOS','acC','ACAO') },
-  acN:      { title:'Ações Watchlist',sub:'Ações em análise',               load: ()=>loadTabela('ACOES_NAO_COMPRADOS','acN'),  actions: ()=>tblActions('ACOES_NAO_COMPRADOS','acN','ACAO') },
-  aportes:  { title:'Aportes',     sub:'Registro de compras mensais',       load: ()=>loadTabela('APORTES','aportes'),          actions: ()=>tblActions('APORTES','aportes','APORTE') },
-  historico:{ title:'Histórico',   sub:'Evolução mensal do patrimônio',     load: ()=>loadTabela('HISTORICO','historico'),      actions: ()=>[] },
-  usuarios: { title:'Usuários',    sub:'Controle de acesso ao sistema',     load: loadUsuarios,                                 actions: ()=>tblActions('USUARIOS','usuarios','USR') },
+  dashboard: { title:'Dashboard',       sub:'Visão geral em tempo real',        load:loadDashboard,                           acts:dashActs },
+  cdb:       { title:'CDB',             sub:'Renda fixa e títulos',             load:()=>loadTabela('CDB','cdb'),             acts:()=>tableActs('CDB','cdb','CDB_FORM') },
+  fiisC:     { title:'FIIs Comprados',  sub:'Fundos em carteira',               load:()=>loadTabela('FIIS_COMPRADOS','fiisC'), acts:()=>tableActs('FIIS_COMPRADOS','fiisC','FII',true) },
+  fiisN:     { title:'FIIs Watchlist',  sub:'Fundos em análise',                load:()=>loadTabela('FIIS_NAO_COMPRADOS','fiisN'), acts:()=>tableActs('FIIS_NAO_COMPRADOS','fiisN','FII') },
+  acC:       { title:'Ações Compradas', sub:'Renda variável em carteira',       load:()=>loadTabela('ACOES_COMPRADOS','acC'), acts:()=>tableActs('ACOES_COMPRADOS','acC','ACAO',true) },
+  acN:       { title:'Ações Watchlist', sub:'Ações em análise',                 load:()=>loadTabela('ACOES_NAO_COMPRADOS','acN'), acts:()=>tableActs('ACOES_NAO_COMPRADOS','acN','ACAO') },
+  aportes:   { title:'Aportes',         sub:'Registro de compras mensais',      load:()=>loadTabela('APORTES','aportes'),     acts:()=>tableActs('APORTES','aportes','APORTE') },
+  historico: { title:'Histórico',       sub:'Evolução mensal do patrimônio',    load:()=>loadTabela('HISTORICO','historico'), acts:()=>[] },
+  usuarios:  { title:'Usuários',        sub:'Controle de acesso ao sistema',    load:loadUsuarios,                           acts:()=>tableActs('USUARIOS','usuarios','USR') },
 };
-
 let activePage = 'dashboard';
 
 function nav(el, page) {
@@ -581,41 +411,38 @@ function carregarPagina(page) {
   const pg = PAGES[page];
   document.getElementById('tbTitle').textContent = pg.title;
   document.getElementById('tbSub').textContent   = pg.sub;
-  // ações do topbar
-  const acts = pg.actions();
-  document.getElementById('tbActions').innerHTML = acts.map(a =>
-    `<button class="btn ${a.cls}" onclick="${a.fn}">${a.ico ? a.ico + ' ' : ''}${a.label}</button>`
+  const acts = pg.acts();
+  document.getElementById('tbActs').innerHTML = acts.map(a =>
+    `<button class="btn ${a.cls}" onclick="${a.fn}">${a.label}</button>`
   ).join('');
   pg.load();
 }
 
-function dashActions() {
+function dashActs() {
   return [
-    { label:'↻ Atualizar', cls:'btn-ghost', fn:'loadDashboard()' },
-    { label:'⟳ Preços', cls:'btn-ghost', fn:'acionarAtualizarPrecos()' },
+    { label:'↻ Atualizar', cls:'btn-ghost btn-sm', fn:'loadDashboard()' },
+    { label:'⟳ Preços',   cls:'btn-ghost btn-sm', fn:'acionarPrecos()' },
   ];
 }
-function tblActions(aba, pg, tipo) {
+function tableActs(aba, pg, tipo, comPrecos=false) {
   const acts = [
-    { label:'↻', cls:'btn-ghost btn-sm', fn:`loadTabela('${aba}','${pg}')` },
+    { label:'↻', cls:'btn-ghost btn-sm', fn:`reloadTable('${aba}','${pg}')` },
     { label:'+ Adicionar', cls:'btn-primary btn-sm', fn:`openModal('${aba}','${pg}',null,null,'${tipo}')` },
   ];
-  if (['FIIS_COMPRADOS','FIIS_NAO_COMPRADOS','ACOES_COMPRADOS','ACOES_NAO_COMPRADOS'].includes(aba)) {
-    acts.splice(1, 0, { label:'⟳ Preços', cls:'btn-ghost btn-sm', fn:'acionarAtualizarPrecos()' });
-  }
+  if (comPrecos) acts.splice(1,0,{ label:'⟳ Preços', cls:'btn-ghost btn-sm', fn:'acionarPrecos()' });
   return acts;
 }
+function reloadTable(aba, pg) { loadTabela(aba, pg); }
 
-// ═══════════════════════════════════════════════
-// DASHBOARD
-// ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
+   DASHBOARD
+═══════════════════════════════════════════ */
 async function loadDashboard() {
-  const el = document.getElementById('pg-dashboard');
-  el.innerHTML = '<div class="loading-row"><span class="spin"></span>Carregando dashboard...</div>';
+  el('pg-dashboard').innerHTML = loading();
   try {
-    const d = await api('getDashboard');
+    const d = await apiGet('getDashboard');
     renderDashboard(d);
-  } catch(_) {}
+  } catch(e) { el('pg-dashboard').innerHTML = `<div class="loading-row" style="color:var(--red)">Erro: ${e.message}</div>`; }
 }
 
 function fmt(v) {
@@ -628,330 +455,270 @@ function pct(v) {
 
 function renderDashboard(d) {
   const kpis = [
-    { label:'Patrimônio Total', value: fmt(d.patrim), cls:'amber', sub: 'Carteira + CDB' },
-    { label:'Total Investido',  value: fmt(d.totalInv), cls:'', sub: 'FIIs + Ações' },
-    { label:'Retorno Geral',    value: pct(d.retGeral), cls: d.retGeral >= 0 ? 'green':'red', sub:'Variação do capital' },
-    { label:'FIIs (Atual)',     value: fmt(d.fiiC.atual), cls:'blue', sub: d.fiiC.qtd + ' ativos' },
-    { label:'Ações (Atual)',    value: fmt(d.acC.atual), cls:'', sub: d.acC.qtd + ' ativos' },
-    { label:'CDB (Atual)',      value: fmt(d.cdb.atual), cls:'', sub: 'Renda fixa' },
-    { label:'Aporte do Mês',   value: fmt(d.aporteMes), cls:'', sub: new Date().toLocaleString('pt-BR',{month:'long',year:'numeric'}) },
-    { label:'FIIs Watchlist',  value: d.fiiN.qtd + ' ativos', cls:'', sub: fmt(d.fiiN.atual) + ' potencial' },
+    { l:'Patrimônio Total', v:fmt(d.patrim),       c:'amber', s:'Carteira + CDB' },
+    { l:'Total Investido',  v:fmt(d.totalInv),      c:'',      s:'FIIs + Ações' },
+    { l:'Retorno Geral',    v:pct(d.retGeral),      c:parseFloat(d.retGeral)>=0?'green':'red', s:'Sobre capital investido' },
+    { l:'FIIs (Atual)',     v:fmt(d.fiiC.atual),    c:'blue',  s:d.fiiC.qtd+' ativos' },
+    { l:'Ações (Atual)',    v:fmt(d.acC.atual),     c:'',      s:d.acC.qtd+' ativos' },
+    { l:'CDB (Atual)',      v:fmt(d.cdb.atual),     c:'',      s:'Renda fixa' },
+    { l:'Aporte do Mês',   v:fmt(d.aporteMes),     c:'',      s:new Date().toLocaleString('pt-BR',{month:'long',year:'numeric'}) },
+    { l:'FIIs Watchlist',  v:d.fiiN.qtd+' ativos', c:'',      s:fmt(d.fiiN.atual)+' potencial' },
   ];
+  let h = '<div class="cards">' + kpis.map(k=>
+    `<div class="kpi"><div class="kpi-label">${k.l}</div><div class="kpi-value ${k.c}">${k.v}</div><div class="kpi-sub">${k.s}</div></div>`
+  ).join('') + '</div>';
 
-  let html = '<div class="cards">';
-  kpis.forEach(k => {
-    html += `<div class="kpi">
-      <div class="kpi-label">${k.label}</div>
-      <div class="kpi-value ${k.cls}">${k.value}</div>
-      <div class="kpi-sub">${k.sub}</div>
-    </div>`;
-  });
-  html += '</div>';
-
-  // Chart histórico
   const rows = (d.historico && d.historico.rows) ? d.historico.rows.slice(-10) : [];
-  html += `<div class="chart-card">
-    <div class="chart-head">
-      <span class="chart-title">Evolução Patrimonial</span>
-      <span style="font-size:11px;color:var(--muted)">Últimas entradas do histórico</span>
-    </div>`;
-  if (rows.length > 0) {
-    const vals = rows.map(r => parseFloat(r[3])||0);
-    const mx   = Math.max(...vals, 1);
-    html += '<div class="chart-body">' + vals.map((v,i) => {
-      const h = Math.max(6, Math.round((v/mx)*100));
-      return `<div class="bar" style="height:${h}%" data-tip="${fmt(v)}"></div>`;
-    }).join('') + '</div>';
-    html += '<div class="chart-labels">' + rows.map(r=>`<span>${r[0]||''}</span>`).join('') + '</div>';
+  h += `<div class="chart-card"><div class="chart-head"><span class="chart-title">Evolução Patrimonial</span><span style="font-size:11px;color:var(--muted)">Histórico mensal</span></div>`;
+  if (rows.length) {
+    const vals = rows.map(r => parseFloat(r[3])||0), mx = Math.max(...vals,1);
+    h += '<div class="chart-body">' + vals.map(v=>
+      `<div class="bar" style="height:${Math.max(6,Math.round(v/mx*100))}%" data-tip="${fmt(v)}"></div>`
+    ).join('') + '</div>';
+    h += '<div class="chart-labels">' + rows.map(r=>`<span>${r[0]||''}</span>`).join('') + '</div>';
   } else {
-    html += '<div style="color:var(--muted);font-size:13px;padding:20px 0">Sem dados históricos ainda. Faça aportes para ver a evolução.</div>';
+    h += '<div style="color:var(--muted);font-size:13px;padding:10px 0">Sem histórico ainda.</div>';
   }
-  html += '</div>';
+  h += '</div>';
 
-  // Mini tabelas resumo
-  html += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">`;
-  html += miniResumo('FIIs Comprados', d.fiiC);
-  html += miniResumo('Ações Compradas', d.acC);
-  html += '</div>';
-
-  document.getElementById('pg-dashboard').innerHTML = html;
-}
-
-function miniResumo(titulo, t) {
-  return `<div class="tcard">
-    <div class="tcard-head"><span class="tcard-title">${titulo}</span></div>
-    <div style="padding:14px 20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
-      <div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Investido</div>
-           <div style="font-family:'DM Mono',monospace;margin-top:4px;color:var(--text)">${fmt(t.investido)}</div></div>
-      <div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Atual</div>
-           <div style="font-family:'DM Mono',monospace;margin-top:4px;color:var(--text)">${fmt(t.atual)}</div></div>
-      <div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Retorno</div>
-           <div style="font-family:'DM Mono',monospace;margin-top:4px;color:${parseFloat(t.retorno)>=0?'var(--green)':'var(--red)'}">${pct(t.retorno)}</div></div>
-    </div>
+  h += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+    ${miniRes('FIIs Comprados',d.fiiC)}
+    ${miniRes('Ações Compradas',d.acC)}
   </div>`;
+  el('pg-dashboard').innerHTML = h;
 }
 
-async function acionarAtualizarPrecos() {
-  toast('Atualizando preços via GOOGLEFINANCE... aguarde', 'info');
+function miniRes(t, d) {
+  return `<div class="tcard"><div class="tcard-head"><span class="tcard-title">${t}</span></div>
+  <div style="padding:14px 20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+    <div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Investido</div><div style="font-family:'DM Mono',monospace;margin-top:4px">${fmt(d.investido)}</div></div>
+    <div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Atual</div><div style="font-family:'DM Mono',monospace;margin-top:4px">${fmt(d.atual)}</div></div>
+    <div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Retorno</div><div style="font-family:'DM Mono',monospace;margin-top:4px;color:${parseFloat(d.retorno)>=0?'var(--green)':'var(--red)'}">${pct(d.retorno)}</div></div>
+  </div></div>`;
+}
+
+async function acionarPrecos() {
+  toast('Atualizando preços... aguarde (pode demorar ~30s)','info');
   try {
-    const r = await api('atualizarPrecos');
-    toast('Preços atualizados às ' + r.hora, 'ok');
+    const r = await apiGet('atualizarPrecos');
+    toast(`✓ ${r.atualizados} preços atualizados às ${r.hora}`,'ok');
     carregarPagina(activePage);
-  } catch(_) {}
+  } catch(e) { toast('Erro: '+e.message,'err'); }
 }
 
-// ═══════════════════════════════════════════════
-// TABELAS GENÉRICAS
-// ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
+   TABELAS
+═══════════════════════════════════════════ */
 const COLS = {
   CDB:                { h:['Ticker','Tipo','Qtd','P.Médio','P.Atual','V.Investido','V.Atual','Retorno%','DY%','Último DY','Atualizado'], money:[3,4,5,6,9], pct:[7,8] },
   FIIS_COMPRADOS:     { h:['Ticker','Tipo','Qtd','P.Médio','P.Atual','V.Investido','V.Atual','Retorno%','DY%','Último DY','Atualizado'], money:[3,4,5,6,9], pct:[7,8] },
   FIIS_NAO_COMPRADOS: { h:['Ticker','Tipo','Qtd','P.Alvo','P.Atual','V.Investido','V.Atual','Retorno%','DY%','Último DY','Atualizado'],  money:[3,4,5,6,9], pct:[7,8] },
-  ACOES_COMPRADOS:    { h:['Ticker','Setor','Qtd','P.Médio','P.Atual','V.Investido','V.Atual','Retorno%','P/L','Atualizado'],            money:[3,4,5,6], pct:[7] },
-  ACOES_NAO_COMPRADOS:{ h:['Ticker','Setor','Qtd','P.Alvo','P.Atual','V.Investido','V.Atual','Retorno%','P/L','Atualizado'],             money:[3,4,5,6], pct:[7] },
-  APORTES:            { h:['Data','Ticker','Tipo','Qtd','Preço','Total','Corretora','Observação'],                                        money:[4,5], pct:[] },
-  HISTORICO:          { h:['Data','Carteira','Aporte Mês','Patrimônio','Rend.Mês','Rend.Acum.'],                                         money:[2,3,4,5], pct:[] },
-  USUARIOS:           { h:['Nome','Email','Senha'],                                                                                       money:[], pct:[] },
+  ACOES_COMPRADOS:    { h:['Ticker','Setor','Qtd','P.Médio','P.Atual','V.Investido','V.Atual','Retorno%','P/L','Atualizado'],             money:[3,4,5,6],   pct:[7] },
+  ACOES_NAO_COMPRADOS:{ h:['Ticker','Setor','Qtd','P.Alvo','P.Atual','V.Investido','V.Atual','Retorno%','P/L','Atualizado'],              money:[3,4,5,6],   pct:[7] },
+  APORTES:            { h:['Data','Ticker','Tipo','Qtd','Preço','Total','Corretora','Observação'],                                         money:[4,5],       pct:[] },
+  HISTORICO:          { h:['Data','Carteira','Aporte Mês','Patrimônio','Rend.Mês','Rend.Acum.'],                                          money:[2,3,4,5],   pct:[] },
+  USUARIOS:           { h:['Nome','Email','Senha'],                                                                                        money:[],          pct:[] },
 };
 
 async function loadTabela(aba, pg) {
-  const el = document.getElementById('pg-' + pg);
-  el.innerHTML = '<div class="loading-row"><span class="spin"></span>Carregando...</div>';
+  el('pg-'+pg).innerHTML = loading();
   try {
-    const d    = await api('lerAba', { aba });
-    const cfg  = COLS[aba] || { h: d.headers, money:[], pct:[] };
-    const rows = d.rows || [];
-
-    let html = '<div class="tcard"><div class="tcard-body"><div style="overflow-x:auto"><table>';
-    html += '<thead><tr>' + cfg.h.map(c => `<th>${c}</th>`).join('') + '<th></th></tr></thead><tbody>';
-
-    if (!rows.length) {
-      html += `<tr><td colspan="${cfg.h.length+1}" class="td-empty">Nenhum registro encontrado</td></tr>`;
-    }
-
-    rows.forEach((row, ri) => {
-      html += '<tr>';
-      row.forEach((cell, ci) => {
-        let v   = (cell !== null && cell !== undefined && cell !== '') ? cell : '—';
-        let cls = 'td-num';
-        if (ci === 0) cls = 'td-ticker';
+    const d   = await apiGet('lerAba', { aba });
+    const cfg = COLS[aba] || { h: d.headers, money:[], pct:[] };
+    const rows= d.rows || [];
+    let h = '<div class="tcard"><div style="overflow-x:auto"><table><thead><tr>' +
+      cfg.h.map(c=>`<th>${c}</th>`).join('') + '<th></th></tr></thead><tbody>';
+    if (!rows.length) h += `<tr><td colspan="${cfg.h.length+1}" class="td-empty">Nenhum registro. Clique em "+ Adicionar".</td></tr>`;
+    rows.forEach((row,ri) => {
+      h += '<tr>';
+      row.forEach((cell,ci) => {
+        let v = (cell!==null&&cell!==undefined&&cell!=='') ? cell : '—';
+        let c = 'td-num';
+        if (ci===0) c='td-ticker';
         if (cfg.pct.includes(ci)) {
-          const n = parseFloat(v);
-          cls = isNaN(n) ? '' : (n >= 0 ? 'td-pos' : 'td-neg');
-          v   = isNaN(n) ? v : (n >= 0 ? '+' : '') + n.toFixed(2) + '%';
-        } else if (cfg.money.includes(ci) && !isNaN(parseFloat(v)) && v !== '—') {
-          v = fmt(v);
+          const n=parseFloat(v);
+          c=isNaN(n)?'':(n>=0?'td-pos':'td-neg');
+          v=isNaN(n)?v:(n>=0?'+':'')+n.toFixed(2)+'%';
+        } else if (cfg.money.includes(ci)&&!isNaN(parseFloat(v))&&v!=='—') {
+          v=fmt(v);
         }
-        html += `<td class="${cls}">${v}</td>`;
+        h+=`<td class="${c}">${v}</td>`;
       });
-      html += `<td><div class="td-acts">
+      h+=`<td><div class="td-acts">
         <button class="btn btn-blue btn-sm" onclick="editarLinha('${aba}','${pg}',${ri})">✏</button>
         <button class="btn btn-danger btn-sm" onclick="excluirLinha('${aba}','${pg}',${ri+1})">✕</button>
       </div></td></tr>`;
     });
-
-    html += '</tbody></table></div></div></div>';
-    el.innerHTML = html;
-  } catch(_) {}
+    h+='</tbody></table></div></div>';
+    el('pg-'+pg).innerHTML=h;
+  } catch(e){ el('pg-'+pg).innerHTML=`<div class="loading-row" style="color:var(--red)">Erro: ${e.message}</div>`; }
 }
 
-// Usuários - oculta senha
 async function loadUsuarios() {
-  const el = document.getElementById('pg-usuarios');
-  el.innerHTML = '<div class="loading-row"><span class="spin"></span>Carregando...</div>';
+  el('pg-usuarios').innerHTML = loading();
   try {
-    const d = await api('lerAba', { aba:'USUARIOS' });
-    let html = '<div class="tcard"><div class="tcard-body"><table>';
-    html += '<thead><tr><th>Nome</th><th>Email</th><th>Senha</th><th></th></tr></thead><tbody>';
-    if (!d.rows.length) html += '<tr><td colspan="4" class="td-empty">Nenhum usuário</td></tr>';
-    d.rows.forEach((r, ri) => {
-      html += `<tr>
-        <td>${r[0]||'—'}</td><td>${r[1]||'—'}</td><td>••••••••</td>
-        <td><button class="btn btn-danger btn-sm" onclick="excluirLinha('USUARIOS','usuarios',${ri+1})">✕</button></td>
-      </tr>`;
+    const d=await apiGet('lerAba',{aba:'USUARIOS'});
+    let h='<div class="tcard"><div style="overflow-x:auto"><table><thead><tr><th>Nome</th><th>Email</th><th>Senha</th><th></th></tr></thead><tbody>';
+    if(!d.rows.length) h+='<tr><td colspan="4" class="td-empty">Nenhum usuário cadastrado</td></tr>';
+    d.rows.forEach((r,ri)=>{
+      h+=`<tr><td>${r[0]||'—'}</td><td>${r[1]||'—'}</td><td>••••••••</td>
+      <td><button class="btn btn-danger btn-sm" onclick="excluirLinha('USUARIOS','usuarios',${ri+1})">✕ Excluir</button></td></tr>`;
     });
-    html += '</tbody></table></div></div>';
-    el.innerHTML = html;
-  } catch(_) {}
+    h+='</tbody></table></div></div>';
+    el('pg-usuarios').innerHTML=h;
+  } catch(e){ el('pg-usuarios').innerHTML=`<div class="loading-row" style="color:var(--red)">Erro: ${e.message}</div>`; }
 }
 
-// ═══════════════════════════════════════════════
-// MODAL / FORMULÁRIOS
-// ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
+   MODAL
+═══════════════════════════════════════════ */
 const FORMS = {
-  FII: [
-    { id:'ticker', label:'Ticker', type:'text' },
-    { id:'tipo',   label:'Tipo',   type:'text' },
-    { id:'qtd',    label:'Quantidade', type:'number' },
-    { id:'pm',     label:'Preço Médio / Alvo', type:'number', step:'0.01' },
-    { id:'pa',     label:'Preço Atual', type:'number', step:'0.01' },
-    { id:'dy',     label:'DY %', type:'number', step:'0.01' },
-    { id:'ultDY',  label:'Último DY (R$)', type:'number', step:'0.01' },
+  FII:[
+    {id:'ticker',label:'Ticker',type:'text'},{id:'tipo',label:'Tipo',type:'text'},
+    {id:'qtd',label:'Quantidade',type:'number'},{id:'pm',label:'Preço Médio/Alvo',type:'number',step:'0.01'},
+    {id:'pa',label:'Preço Atual',type:'number',step:'0.01'},
+    {id:'dy',label:'DY %',type:'number',step:'0.01'},{id:'ultDY',label:'Último DY (R$)',type:'number',step:'0.01'},
   ],
-  ACAO: [
-    { id:'ticker', label:'Ticker', type:'text' },
-    { id:'setor',  label:'Setor',  type:'text' },
-    { id:'qtd',    label:'Quantidade', type:'number' },
-    { id:'pm',     label:'Preço Médio / Alvo', type:'number', step:'0.01' },
-    { id:'pa',     label:'Preço Atual', type:'number', step:'0.01' },
-    { id:'pl',     label:'P/L', type:'number', step:'0.01' },
+  ACAO:[
+    {id:'ticker',label:'Ticker',type:'text'},{id:'setor',label:'Setor',type:'text'},
+    {id:'qtd',label:'Quantidade',type:'number'},{id:'pm',label:'Preço Médio/Alvo',type:'number',step:'0.01'},
+    {id:'pa',label:'Preço Atual',type:'number',step:'0.01'},
+    {id:'pl',label:'P/L',type:'number',step:'0.01'},
   ],
-  CDB_FORM: [
-    { id:'ticker', label:'Ticker / Nome', type:'text' },
-    { id:'tipo',   label:'Tipo (CDB/LCI/LCA...)', type:'text' },
-    { id:'qtd',    label:'Quantidade', type:'number' },
-    { id:'pm',     label:'Preço Médio', type:'number', step:'0.01' },
-    { id:'pa',     label:'Preço Atual', type:'number', step:'0.01' },
-    { id:'dy',     label:'DY %', type:'number', step:'0.01' },
-    { id:'ultDY',  label:'Último DY (R$)', type:'number', step:'0.01' },
+  CDB_FORM:[
+    {id:'ticker',label:'Ticker/Nome',type:'text'},{id:'tipo',label:'Tipo (CDB/LCI/LCA)',type:'text'},
+    {id:'qtd',label:'Quantidade',type:'number'},{id:'pm',label:'Preço Médio',type:'number',step:'0.01'},
+    {id:'pa',label:'Preço Atual',type:'number',step:'0.01'},
+    {id:'dy',label:'DY %',type:'number',step:'0.01'},{id:'ultDY',label:'Último DY (R$)',type:'number',step:'0.01'},
   ],
-  APORTE: [
-    { id:'data',      label:'Data', type:'date', full:true },
-    { id:'ticker',    label:'Ticker', type:'text' },
-    { id:'tipo',      label:'Tipo (FII/AÇÃO/CDB)', type:'text' },
-    { id:'qtd',       label:'Quantidade', type:'number' },
-    { id:'preco',     label:'Preço (R$)', type:'number', step:'0.01' },
-    { id:'corretora', label:'Corretora', type:'text' },
-    { id:'obs',       label:'Observação', type:'text', full:true },
+  APORTE:[
+    {id:'data',label:'Data',type:'date',full:true},{id:'ticker',label:'Ticker',type:'text'},
+    {id:'tipo',label:'Tipo (FII/AÇÃO/CDB)',type:'text'},{id:'qtd',label:'Quantidade',type:'number'},
+    {id:'preco',label:'Preço (R$)',type:'number',step:'0.01'},{id:'corretora',label:'Corretora',type:'text'},
+    {id:'obs',label:'Observação',type:'text',full:true},
   ],
-  USR: [
-    { id:'nome',  label:'Nome', type:'text', full:true },
-    { id:'email', label:'Email', type:'email' },
-    { id:'senha', label:'Senha', type:'password' },
+  USR:[
+    {id:'nome',label:'Nome completo',type:'text',full:true},
+    {id:'email',label:'Email',type:'email'},{id:'senha',label:'Senha',type:'password'},
   ],
 };
 
-let _mAba, _mPg, _mRow, _mRowData, _mTipo;
+let _mAba,_mPg,_mRow,_mData,_mTipo;
 
-function openModal(aba, pg, rowIdx, rowData, tipo) {
-  _mAba = aba; _mPg = pg; _mRow = rowIdx; _mRowData = rowData; _mTipo = tipo;
-  const formKey = tipo === 'FII' ? 'FII' : tipo === 'ACAO' ? 'ACAO' : tipo === 'APORTE' ? 'APORTE' : tipo === 'USR' ? 'USR' : 'CDB_FORM';
-  const fields  = FORMS[formKey] || [];
-  document.getElementById('modalTitle').textContent = rowIdx !== null ? 'Editar Registro' : 'Novo Registro';
-
-  let html = '<div class="fgrid">';
-  fields.forEach((f, i) => {
-    const val = (rowData && rowData[i] !== undefined) ? rowData[i] : '';
-    html += `<div class="fg ${f.full?'full':''}">
-      <label>${f.label}</label>
-      <input id="mf_${f.id}" type="${f.type}" value="${val}" placeholder="${f.label}" ${f.step?`step="${f.step}"`:''}/>
+function openModal(aba,pg,rowIdx,rowData,tipo){
+  _mAba=aba;_mPg=pg;_mRow=rowIdx;_mData=rowData;_mTipo=tipo;
+  const fKey=tipo==='FII'?'FII':tipo==='ACAO'?'ACAO':tipo==='APORTE'?'APORTE':tipo==='USR'?'USR':'CDB_FORM';
+  const fields=FORMS[fKey]||[];
+  el('modalTitle').textContent = rowIdx!==null?'Editar Registro':'Novo Registro';
+  let h='<div class="fgrid">';
+  fields.forEach((f,i)=>{
+    const v=(rowData&&rowData[i]!==undefined)?rowData[i]:'';
+    h+=`<div class="fg ${f.full?'full':''}"><label>${f.label}</label>
+      <input id="mf_${f.id}" type="${f.type}" value="${String(v).replace(/"/g,'&quot;')}" placeholder="${f.label}" ${f.step?`step="${f.step}"`:''}/>
     </div>`;
   });
-  html += '</div>';
-  document.getElementById('modalForm').innerHTML = html;
-  document.getElementById('overlay').classList.add('open');
+  h+='</div>';
+  el('modalForm').innerHTML=h;
+  el('overlay').classList.add('open');
 }
 
-async function editarLinha(aba, pg, ri) {
-  try {
-    const d   = await api('lerAba', { aba });
-    const row = d.rows[ri];
-    const tipo= aba.includes('FIIS') ? 'FII' : aba.includes('ACOES') ? 'ACAO' : aba === 'APORTES' ? 'APORTE' : aba === 'USUARIOS' ? 'USR' : 'CDB_FORM';
-    openModal(aba, pg, ri + 1, row, tipo);
-  } catch(_) {}
+async function editarLinha(aba,pg,ri){
+  try{
+    const d=await apiGet('lerAba',{aba});
+    const row=d.rows[ri];
+    const tipo=aba.includes('FIIS')?'FII':aba.includes('ACOES')?'ACAO':aba==='APORTES'?'APORTE':aba==='USUARIOS'?'USR':'CDB_FORM';
+    openModal(aba,pg,ri+1,row,tipo);
+  }catch(e){toast('Erro: '+e.message,'err');}
 }
 
-async function excluirLinha(aba, pg, rowIndex) {
-  if (!confirm('Excluir este registro?')) return;
-  try {
-    await api('deletarLinha', { aba, rowIndex });
-    toast('Excluído com sucesso!', 'ok');
-    loadTabela(aba, pg);
-    if (aba === 'USUARIOS') loadUsuarios();
-  } catch(_) {}
+async function excluirLinha(aba,pg,rowIndex){
+  if(!confirm('Excluir este registro?')) return;
+  try{
+    await apiWrite('deletarLinha',{aba,rowIndex});
+    toast('Excluído!','ok');
+    if(aba==='USUARIOS') loadUsuarios(); else loadTabela(aba,pg);
+  }catch(e){toast('Erro: '+e.message,'err');}
 }
 
-function closeModal() { document.getElementById('overlay').classList.remove('open'); }
-function closeModalOutside(e) { if (e.target === document.getElementById('overlay')) closeModal(); }
+function closeModal(){el('overlay').classList.remove('open')}
+function closeModalOutside(e){if(e.target===el('overlay'))closeModal();}
 
-async function saveModal() {
-  const formKey = _mTipo === 'FII' ? 'FII' : _mTipo === 'ACAO' ? 'ACAO' : _mTipo === 'APORTE' ? 'APORTE' : _mTipo === 'USR' ? 'USR' : 'CDB_FORM';
-  const fields  = FORMS[formKey] || [];
-  const raw     = fields.map(f => document.getElementById('mf_'+f.id)?.value || '');
-
+async function saveModal(){
+  const fKey=_mTipo==='FII'?'FII':_mTipo==='ACAO'?'ACAO':_mTipo==='APORTE'?'APORTE':_mTipo==='USR'?'USR':'CDB_FORM';
+  const fields=FORMS[fKey]||[];
+  const raw=fields.map(f=>el('mf_'+f.id)?.value||'');
   let linha;
-  const agora = new Date().toLocaleString('pt-BR');
+  const agora=new Date().toLocaleString('pt-BR');
+  const n=v=>parseFloat(v)||0;
+  const fix=(v,d=2)=>(+parseFloat(v).toFixed(d))||0;
 
-  if (_mTipo === 'FII') {
-    const [ticker,tipo,qtd,pm,pa,dy,ultDY] = raw;
-    const vi = +(parseFloat(qtd)*parseFloat(pm)||0).toFixed(2);
-    const va = +(parseFloat(qtd)*parseFloat(pa)||0).toFixed(2);
-    const ret= parseFloat(pm)>0 ? +((parseFloat(pa)-parseFloat(pm))/parseFloat(pm)*100).toFixed(2) : 0;
-    linha = [ticker,tipo,qtd,pm,pa,vi,va,ret,dy,ultDY,agora];
-  } else if (_mTipo === 'ACAO') {
-    const [ticker,setor,qtd,pm,pa,pl] = raw;
-    const vi = +(parseFloat(qtd)*parseFloat(pm)||0).toFixed(2);
-    const va = +(parseFloat(qtd)*parseFloat(pa)||0).toFixed(2);
-    const ret= parseFloat(pm)>0 ? +((parseFloat(pa)-parseFloat(pm))/parseFloat(pm)*100).toFixed(2) : 0;
-    linha = [ticker,setor,qtd,pm,pa,vi,va,ret,pl,agora];
-  } else if (_mTipo === 'APORTE') {
-    const [data,ticker,tipo,qtd,preco,corretora,obs] = raw;
-    const total = +(parseFloat(qtd)*parseFloat(preco)||0).toFixed(2);
-    linha = [data,ticker,tipo,qtd,preco,total,corretora,obs];
-  } else if (_mTipo === 'CDB_FORM') {
-    const [ticker,tipo,qtd,pm,pa,dy,ultDY] = raw;
-    const vi = +(parseFloat(qtd)*parseFloat(pm)||0).toFixed(2);
-    const va = +(parseFloat(qtd)*parseFloat(pa)||0).toFixed(2);
-    const ret= parseFloat(pm)>0 ? +((parseFloat(pa)-parseFloat(pm))/parseFloat(pm)*100).toFixed(2) : 0;
-    linha = [ticker,tipo,qtd,pm,pa,vi,va,ret,dy,ultDY,agora];
-  } else {
-    // USR
-    linha = raw;
+  if(_mTipo==='FII'||_mTipo==='CDB_FORM'){
+    const[ticker,tipo,qtd,pm,pa,dy,ultDY]=raw;
+    const vi=fix(n(qtd)*n(pm));const va=fix(n(qtd)*n(pa));
+    const ret=n(pm)>0?fix((n(pa)-n(pm))/n(pm)*100):0;
+    linha=[ticker,tipo,qtd,pm,pa,vi,va,ret,dy,ultDY,agora];
+  }else if(_mTipo==='ACAO'){
+    const[ticker,setor,qtd,pm,pa,pl]=raw;
+    const vi=fix(n(qtd)*n(pm));const va=fix(n(qtd)*n(pa));
+    const ret=n(pm)>0?fix((n(pa)-n(pm))/n(pm)*100):0;
+    linha=[ticker,setor,qtd,pm,pa,vi,va,ret,pl,agora];
+  }else if(_mTipo==='APORTE'){
+    const[data,ticker,tipo,qtd,preco,corretora,obs]=raw;
+    linha=[data,ticker,tipo,qtd,preco,fix(n(qtd)*n(preco)),corretora,obs];
+  }else{
+    linha=raw;
   }
 
-  try {
-    if (_mRow !== null) {
-      await api('atualizarLinha', { aba: _mAba, rowIndex: _mRow, linha });
-      toast('Atualizado!', 'ok');
-    } else {
-      await api('adicionarLinha', { aba: _mAba, linha });
-      toast('Adicionado!', 'ok');
+  try{
+    if(_mRow!==null){
+      await apiWrite('atualizarLinha',{aba:_mAba,rowIndex:_mRow,linha});
+      toast('Atualizado!','ok');
+    }else{
+      await apiWrite('adicionarLinha',{aba:_mAba,linha});
+      toast('Adicionado!','ok');
     }
     closeModal();
-    if (_mAba === 'USUARIOS') loadUsuarios(); else loadTabela(_mAba, _mPg);
-  } catch(_) {}
+    if(_mAba==='USUARIOS') loadUsuarios(); else loadTabela(_mAba,_mPg);
+  }catch(e){toast('Erro ao salvar: '+e.message,'err');}
 }
 
-// ═══════════════════════════════════════════════
-// TOAST
-// ═══════════════════════════════════════════════
-function toast(msg, type = 'info') {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.className   = 'show ' + type;
-  clearTimeout(window._tt);
-  window._tt = setTimeout(() => t.className = '', 3500);
+/* ═══════════════════════════════════════════
+   UTILS
+═══════════════════════════════════════════ */
+function el(id){return document.getElementById(id)}
+function setErr(id,msg){el(id).textContent=msg}
+function loading(){return '<div class="loading-row"><span class="spin"></span> Carregando...</div>'}
+function toast(msg,type='info'){
+  const t=el('toast');t.textContent=msg;t.className='show '+type;
+  clearTimeout(window._tt);window._tt=setTimeout(()=>t.className='',4000);
 }
 
-// ═══════════════════════════════════════════════
-// INIT
-// ═══════════════════════════════════════════════
-(function init() {
-  const saved = localStorage.getItem(LS_URL);
-  if (saved) {
-    API = saved;
-    document.getElementById('cfgBanner').style.display = 'none';
-    // Verifica se há sessão salva
-    const usr = localStorage.getItem(LS_USR);
-    if (usr) {
-      try {
-        currentUser = JSON.parse(usr);
-        document.getElementById('sbNome').textContent  = currentUser.nome;
-        document.getElementById('sbEmail').textContent = currentUser.email;
-        document.getElementById('app').classList.add('show');
+/* ═══════════════════════════════════════════
+   BOOT
+═══════════════════════════════════════════ */
+(function boot(){
+  const url=localStorage.getItem(LS_URL);
+  if(url){
+    API=url;
+    el('cfgBanner').style.display='none';
+    const usr=localStorage.getItem(LS_USR);
+    if(usr){
+      try{
+        currentUser=JSON.parse(usr);
+        el('sbNome').textContent=currentUser.nome;
+        el('sbEmail').textContent=currentUser.email;
+        el('app').classList.add('show');
         carregarPagina('dashboard');
         return;
-      } catch(_) {}
+      }catch(_){}
     }
-    document.getElementById('loginScreen').classList.add('show');
+    el('loginScreen').classList.add('show');
   }
-  // Atalhos de teclado
-  document.addEventListener('keyup', e => {
-    if (e.key === 'Enter') {
-      const login = document.getElementById('loginScreen');
-      if (login.classList.contains('show')) fazerLogin();
+  document.addEventListener('keyup',e=>{
+    if(e.key==='Enter'){
+      if(el('loginScreen').classList.contains('show')) fazerLogin();
     }
-    if (e.key === 'Escape') closeModal();
+    if(e.key==='Escape') closeModal();
   });
 })();
 </script>
